@@ -480,52 +480,8 @@ document.querySelectorAll('.product-card').forEach(card => {
 });
 
 // ================================
-// STICKY CTA ON MOBILE
+// STICKY CTA ON MOBILE - DISABLED (too intrusive)
 // ================================
-
-const forSaleSection = document.getElementById('for-sale');
-
-if (forSaleSection && window.innerWidth <= 768) {
-    // Create sticky CTA
-    const stickyCta = document.createElement('div');
-    stickyCta.className = 'sticky-cta';
-    stickyCta.innerHTML = `
-        <a href="#for-sale" class="btn btn-primary" onclick="scrollToFirstProduct()">
-            Zobacz dostępne obrazy
-        </a>
-    `;
-    document.body.appendChild(stickyCta);
-
-    let lastScrollY = 0;
-
-    window.addEventListener('scroll', throttle(() => {
-        const sectionTop = forSaleSection.offsetTop;
-        const sectionBottom = sectionTop + forSaleSection.offsetHeight;
-        const scrollY = window.pageYOffset;
-        const viewportHeight = window.innerHeight;
-
-        // Show sticky CTA when scrolling down and past hero, hide when in for-sale section
-        if (scrollY > viewportHeight * 0.5 &&
-            (scrollY < sectionTop - 100 || scrollY > sectionBottom)) {
-            stickyCta.classList.add('visible');
-        } else {
-            stickyCta.classList.remove('visible');
-        }
-
-        lastScrollY = scrollY;
-    }, 100));
-}
-
-function scrollToFirstProduct() {
-    const firstProduct = document.querySelector('.product-card');
-    if (firstProduct) {
-        const offsetTop = firstProduct.offsetTop - 100;
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    }
-}
 
 // ================================
 // LIGHTBOX SWIPE NAVIGATION
