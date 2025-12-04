@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ziruart.com/sitemap.xml
+
+# Blokowanie katalogów systemowych
+Disallow: /*.json$

@@ -1570,3 +1570,60 @@ main {
         animation: bounce 0.2s ease;
     }
 }
+
+/* ================================
+   SKELETON LOADING
+   ================================ */
+
+/* Skeleton pulse animation */
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton base style */
+.skeleton {
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Image skeleton - shown before image loads */
+.product-image-main,
+.gallery-image-wrapper,
+.featured-image-container {
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e8e8e8 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+}
+
+/* Remove skeleton when image is loaded */
+.product-image-main:has(img.loaded),
+.gallery-image-wrapper:has(img.loaded),
+.featured-image-container:has(img.loaded) {
+    background: none;
+    animation: none;
+}
+
+/* Fallback for browsers without :has() support */
+.product-image-main img,
+.gallery-image-wrapper img,
+.featured-image-container img {
+    background: transparent;
+}
+
+/* Loading state with pulse */
+.product-image-main:not(:has(img.loaded)),
+.gallery-image-wrapper:not(:has(img.loaded)) {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}

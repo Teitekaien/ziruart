@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Strona nie znaleziona | Karolina Zimny-Rudny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #fff;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .geometric-shape {
+            position: fixed;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #fff;
+            transform: rotate(45deg);
+        }
+
+        .shape-2 {
+            bottom: 15%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .shape-3 {
+            top: 20%;
+            right: 15%;
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 70px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Strona nie znaleziona</h1>
+        <p>
+            Przepraszam, ale strona której szukasz nie istnieje lub została przeniesiona.
+            Wróć na stronę główną, aby zobaczyć moje prace.
+        </p>
+        <a href="/" class="btn">Wróć na stronę główną</a>
+    </div>
+</body>
+
+</html>
