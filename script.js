@@ -418,6 +418,9 @@ document.querySelectorAll('.product-card').forEach(card => {
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
+    let startY = 0;
+    let currentY = 0;
+    let isHorizontalSwipe = null; // null = not determined, true = horizontal, false = vertical
 
     const imageSources = Array.from(thumbs).map(thumb => {
         const onclick = thumb.getAttribute('onclick');
@@ -444,19 +447,34 @@ document.querySelectorAll('.product-card').forEach(card => {
         thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
     }
 
-    // Touch events
+    // Touch events - detect direction first, then decide action
     imageMain.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
         isDragging = true;
-        imageMain.classList.add('swiping');
+        isHorizontalSwipe = null; // Reset direction detection
     }, { passive: true });
 
     imageMain.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
+
         currentX = e.touches[0].clientX;
-        const diff = currentX - startX;
-        if (mainImg) {
-            mainImg.style.transform = `translateX(${diff * 0.3}px)`;
+        currentY = e.touches[0].clientY;
+
+        const diffX = Math.abs(currentX - startX);
+        const diffY = Math.abs(currentY - startY);
+
+        // Determine swipe direction on first significant movement
+        if (isHorizontalSwipe === null && (diffX > 10 || diffY > 10)) {
+            isHorizontalSwipe = diffX > diffY;
+            if (isHorizontalSwipe) {
+                imageMain.classList.add('swiping');
+            }
+        }
+
+        // Only transform image if horizontal swipe
+        if (isHorizontalSwipe && mainImg) {
+            mainImg.style.transform = `translateX(${(currentX - startX) * 0.3}px)`;
         }
     }, { passive: true });
 
@@ -465,17 +483,23 @@ document.querySelectorAll('.product-card').forEach(card => {
         isDragging = false;
         imageMain.classList.remove('swiping');
 
-        const diff = currentX - startX;
-        if (mainImg) mainImg.style.transform = '';
+        // Only change image if it was a horizontal swipe
+        if (isHorizontalSwipe) {
+            const diff = currentX - startX;
+            if (mainImg) mainImg.style.transform = '';
 
-        if (Math.abs(diff) > 50) {
-            if (diff > 0 && currentIndex > 0) {
-                updateImage(currentIndex - 1);
-            } else if (diff < 0 && currentIndex < imageSources.length - 1) {
-                updateImage(currentIndex + 1);
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentIndex > 0) {
+                    updateImage(currentIndex - 1);
+                } else if (diff < 0 && currentIndex < imageSources.length - 1) {
+                    updateImage(currentIndex + 1);
+                }
             }
         }
+
         currentX = 0;
+        currentY = 0;
+        isHorizontalSwipe = null;
     });
 });
 
