@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- SEO: Podstawowe meta tagi -->
   <title>Karolina Zimny-Rudny | Malarstwo, Abstrakcja geometryczna & Op-Art Kielce</title>
-  <meta name="description" content="Portfolio artystki Karoliny Zimny-Rudny. Nowoczesna abstrakcja geometryczna, Op-Art, unikalne geometryczne zwierzęta oraz profesjonalne portrety na zamówienie. Pracownia w Kielcach.">
-  <meta name="keywords" content="Karolina Zimny-Rudny, malarstwo abstrakcyjne, Op-Art, abstrakcja geometryczna, obrazy geometryczne, portrety na zamówienie, Kielce, sztuka współczesna, geometryczne zwierzęta, malarstwo sztalugowe">
+  <meta name="description"
+    content="Portfolio artystki Karoliny Zimny-Rudny. Nowoczesna abstrakcja geometryczna, Op-Art, unikalne geometryczne zwierzęta oraz profesjonalne portrety na zamówienie. Pracownia w Kielcach.">
+  <meta name="keywords"
+    content="Karolina Zimny-Rudny, malarstwo abstrakcyjne, Op-Art, abstrakcja geometryczna, obrazy geometryczne, portrety na zamówienie, Kielce, sztuka współczesna, geometryczne zwierzęta, malarstwo sztalugowe">
   <meta name="author" content="Karolina Zimny-Rudny">
   <link rel="canonical" href="https://www.ziruart.com"> <!-- Ustaw tu swój właściwy adres -->
 
   <!-- SEO: Open Graph (dla Facebooka, LinkedIn itp.) -->
   <meta property="og:title" content="Karolina Zimny-Rudny | Geometria i Wyobraźnia">
-  <meta property="og:description" content="Odkryj świat, w którym matematyczna precyzja spotyka się z artystyczną wizją. Abstrakcja geometryczna, Op-Art i portrety.">
+  <meta property="og:description"
+    content="Odkryj świat, w którym matematyczna precyzja spotyka się z artystyczną wizją. Abstrakcja geometryczna, Op-Art i portrety.">
   <meta property="og:image" content="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.ziruart.com">
@@ -21,7 +25,9 @@
   <!-- Fonty i style -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- SEO: Dane strukturalne (Schema.org) -->
@@ -45,6 +51,7 @@
   }
   </script>
 </head>
+
 <body>
   <!-- Loader -->
   <div class="loader">
@@ -66,6 +73,7 @@
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link">Start</a></li>
+        <li><a href="#for-sale" class="nav-link" style="color: var(--accent); font-weight: 700;">Na sprzedaż</a></li>
         <li><a href="#works" class="nav-link">Prace</a></li>
         <li><a href="#philosophy" class="nav-link">Filozofia</a></li>
         <li><a href="#about" class="nav-link">O mnie</a></li>
@@ -86,10 +94,11 @@
           <span class="hero-line">Ruch</span>
         </h1>
         <p class="hero-subtitle">
-          Moja sztuka to przestrzeń spotkania matematycznej harmonii z subiektywnym doświadczeniem. Z prostych znaków tworzę nowe światy pełne napięcia wizualnego.
+          Moja sztuka to przestrzeń spotkania matematycznej harmonii z subiektywnym doświadczeniem. Z prostych znaków
+          tworzę nowe światy pełne napięcia wizualnego.
         </p>
         <div class="hero-cta">
-          <a href="#works" class="btn btn-primary">Zobacz moje prace</a>
+          <a href="#for-sale" class="btn btn-primary">Zobacz prace na sprzedaż</a>
           <a href="#philosophy" class="btn btn-outline">Poznaj moją filozofię</a>
         </div>
       </div>
@@ -99,18 +108,145 @@
       </div>
     </section>
 
+    <!-- For Sale Section -->
+    <section class="for-sale" id="for-sale">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Dostępne od ręki</span>
+          <h2 class="section-title">Inwestuj w Sztukę</h2>
+          <p class="section-subtitle">Unikalne, ręcznie malowane obrazy, które odmienią Twoje wnętrze.</p>
+        </div>
+
+        <div class="products-grid">
+
+          <!-- Product 1: Niedźwiedź -->
+          <article class="product-card" data-aos="fade-up">
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg"
+                  alt="Niedźwiedź 1 - Obraz geometryczny">
+                <span class="product-badge">Dostępny</span>
+              </div>
+              <div class="product-thumbnails">
+                <!-- Placeholders for mockups -->
+                <div class="thumb active"><img
+                    src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg" alt="">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_bear.png')"><img
+                    src="img/mockups/mockup_bear.png" alt="Wizualizacja"></div>
+
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Niedźwiedź 1</h3>
+              <div class="product-meta">100×100 cm • Akryl na płótnie • 2024</div>
+              <p class="product-desc">
+                Symbol siły i stabilności ujęty w nowoczesną, geometryczną formę.
+                Idealny do przestronnego salonu lub gabinetu. Dominujące brązy i szarości
+                wprowadzają harmonię, a ostre podziały dodają charakteru.
+              </p>
+              <div class="product-price">
+                <span class="price-label">Cena:</span>
+                <span class="price-value">Zapytaj o cenę</span>
+              </div>
+              <div class="product-actions">
+                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2: Lis -->
+          <article class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.jpg"
+                  alt="Lis 2 - Obraz geometryczny">
+                <span class="product-badge">Dostępny</span>
+              </div>
+              <div class="product-thumbnails">
+                <!-- Placeholders for mockups -->
+                <div class="thumb active"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.jpg')">
+                  <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.jpg" alt="">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_fox.png')"><img
+                    src="img/mockups/mockup_fox.png" alt="Wizualizacja"></div>
+
+              </div>
+            </div>
+
+            <div class="product-info">
+              <h3>Lis 2</h3>
+              <div class="product-meta">100×100 cm • Akryl na płótnie • 2025</div>
+              <p class="product-desc">
+                Energetyczna kompozycja pełna życia. Geometryczny lis zdaje się wychodzić z płótna
+                dzięki mistrzowskiemu operowaniu kontrastem. Ożywi każde nowoczesne wnętrze,
+                stając się jego głównym punktem.
+              </p>
+              <div class="product-price">
+                <span class="price-label">Cena:</span>
+                <span class="price-value">Zapytaj o cenę</span>
+              </div>
+              <div class="product-actions">
+                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3: Żyrafa -->
+          <article class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-gallery">
+              <div class="product-image-main">
+                <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.jpeg"
+                  alt="Żyrafa 3 - Obraz geometryczny">
+                <span class="product-badge">Dostępny</span>
+              </div>
+              <div class="product-thumbnails">
+                <!-- Placeholders for mockups -->
+                <div class="thumb active"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.jpeg')">
+                  <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.jpeg" alt="">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_giraffe.png')"><img
+                    src="img/mockups/mockup_giraffe.png" alt="Wizualizacja"></div>
+
+              </div>
+            </div>
+
+            <div class="product-info">
+              <h3>Żyrafa 3</h3>
+              <div class="product-meta">100×100 cm • Akryl na płótnie • 2025</div>
+              <p class="product-desc">
+                Abstrakcyjna dekonstrukcja formy. Żyrafa 3 to odważna gra kolorów i kształtów.
+                Obraz, który intryguje i z każdym spojrzeniem pozwala odkryć coś nowego.
+                Doskonały wybór dla kolekcjonerów szukających nieoczywistych rozwiązań.
+              </p>
+              <div class="product-price">
+                <span class="price-label">Cena:</span>
+                <span class="price-value">Zapytaj o cenę</span>
+              </div>
+              <div class="product-actions">
+                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Featured -->
     <section class="featured">
       <div class="featured-image-container">
-        <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg"
-             alt="Niedźwiedź 1" class="featured-image" loading="lazy">
+        <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg" alt="Niedźwiedź 1"
+          class="featured-image" loading="lazy">
       </div>
       <div class="featured-content">
         <div class="featured-tag">Wyróżniona seria</div>
         <h2>Geometryczne<br>zwierzęta</h2>
         <p>
           W tym cyklu łączę abstrakcję geometryczną z naturalnymi formami. Zwierzęta, które tworzę z trójkątów,
-          linii i kontrastów barwnych, nie są dosłownym odwzorowaniem, lecz pulsującą kompozycją. 
+          linii i kontrastów barwnych, nie są dosłownym odwzorowaniem, lecz pulsującą kompozycją.
           To nowoczesne spojrzenie na naturę, idealne do współczesnych wnętrz.
         </p>
         <a href="#geometric-animals" class="btn btn-text">Zobacz serię →</a>
@@ -129,21 +265,26 @@
             <div class="philosophy-icon">◢</div>
             <h3>Dialog precyzji i swobody</h3>
             <p>
-              Tworzenie jest dla mnie dialogiem między precyzją geometrii a swobodą kreatywności. To miejsce, w którym matematyczne formy zyskują życie, ruch i emocje. Kształty i proporcje stają się moim alfabetem, którym opowiadam o harmonii.
+              Tworzenie jest dla mnie dialogiem między precyzją geometrii a swobodą kreatywności. To miejsce, w którym
+              matematyczne formy zyskują życie, ruch i emocje. Kształty i proporcje stają się moim alfabetem, którym
+              opowiadam o harmonii.
             </p>
           </div>
           <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
             <div class="philosophy-icon">◣</div>
             <h3>Przestrzeń poza dosłownością</h3>
             <p>
-              W abstrakcyjnych kompozycjach poszukuję przestrzeni, która wykracza poza to, co widoczne na pierwszy rzut oka. Geometria jest punktem wyjścia, któremu nadaję nowe znaczenia. Chcę, abyś w moich wizjach odnalazł własną historię.
+              W abstrakcyjnych kompozycjach poszukuję przestrzeni, która wykracza poza to, co widoczne na pierwszy rzut
+              oka. Geometria jest punktem wyjścia, któremu nadaję nowe znaczenia. Chcę, abyś w moich wizjach odnalazł
+              własną historię.
             </p>
           </div>
           <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
             <div class="philosophy-icon">◥</div>
             <h3>Pulsacja Op-Art</h3>
             <p>
-              Inspiruje mnie nurt Op-Art i twórczość Victora Vasarelyego. Poprzez linie, kontrasty i złudzenia optyczne buduję wrażenie, że obraz pulsuje w Twoją stronę. Ruch nie wynika z tematu, ale z samego aktu patrzenia.
+              Inspiruje mnie nurt Op-Art i twórczość Victora Vasarelyego. Poprzez linie, kontrasty i złudzenia optyczne
+              buduję wrażenie, że obraz pulsuje w Twoją stronę. Ruch nie wynika z tematu, ale z samego aktu patrzenia.
             </p>
           </div>
         </div>
@@ -173,11 +314,12 @@
           <div class="gallery-item animals" data-aos="zoom-in" id="geometric-animals">
             <div class="gallery-image-wrapper">
               <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg"
-                   alt="Niedźwiedź 1" loading="lazy">
+                alt="Niedźwiedź 1" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Niedźwiedź 1</h3>
-                  <p>Moja geometryczna interpretacja siły i spokoju. Chciałam uchwycić naturę w nieszablonowy sposób, gdzie precyzja kształtów spotyka się z dynamiką barw.</p>
+                  <p>Moja geometryczna interpretacja siły i spokoju. Chciałam uchwycić naturę w nieszablonowy sposób,
+                    gdzie precyzja kształtów spotyka się z dynamiką barw.</p>
                   <span class="gallery-meta">100×100 cm • Akryl na płótnie • 2024</span>
                 </div>
               </div>
@@ -186,12 +328,13 @@
 
           <div class="gallery-item animals" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.jpg"
-                   alt="Lis 2" loading="lazy">
+              <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.jpg" alt="Lis 2"
+                loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Lis 2</h3>
-                  <p>Dynamiczny portret lisa. Poprzez zastosowanie kontrastowych pasów i różnorodnych odcieni nadałam obrazowi głębię, sprawiając, że wydaje się on patrzeć prosto na Ciebie.</p>
+                  <p>Dynamiczny portret lisa. Poprzez zastosowanie kontrastowych pasów i różnorodnych odcieni nadałam
+                    obrazowi głębię, sprawiając, że wydaje się on patrzeć prosto na Ciebie.</p>
                   <span class="gallery-meta">100×100 cm • Akryl na płótnie • 2025</span>
                 </div>
               </div>
@@ -200,12 +343,13 @@
 
           <div class="gallery-item animals" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.jpeg"
-                   alt="Żyrafa 3" loading="lazy">
+              <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.jpeg" alt="Żyrafa 3"
+                loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Żyrafa 3</h3>
-                  <p>Kalejdoskopowa struktura, która balansuje na granicy między porządkiem a chaosem, zapraszając do wejścia w dialog z harmonią i dysonansem.</p>
+                  <p>Kalejdoskopowa struktura, która balansuje na granicy między porządkiem a chaosem, zapraszając do
+                    wejścia w dialog z harmonią i dysonansem.</p>
                   <span class="gallery-meta">100×100 cm • Akryl na płótnie • 2025</span>
                 </div>
               </div>
@@ -216,11 +360,12 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 1,100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 1" loading="lazy">
+                alt="Rozgrywki geometryczne 1" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 1</h3>
-                  <p>Kompozycja z kwadratów i trójkątów. Linie w różnych odcieniach szarości pozwalają na zróżnicowanie trójkątów i ich optyczne zatarcie.</p>
+                  <p>Kompozycja z kwadratów i trójkątów. Linie w różnych odcieniach szarości pozwalają na zróżnicowanie
+                    trójkątów i ich optyczne zatarcie.</p>
                   <span class="gallery-meta">100×100 cm • Akryl na desce • 2013</span>
                 </div>
               </div>
@@ -230,7 +375,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 2,100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 2" loading="lazy">
+                alt="Rozgrywki geometryczne 2" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 2</h3>
@@ -244,7 +389,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 3, 100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 3" loading="lazy">
+                alt="Rozgrywki geometryczne 3" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 3</h3>
@@ -258,7 +403,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 4,100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 4" loading="lazy">
+                alt="Rozgrywki geometryczne 4" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 4</h3>
@@ -272,7 +417,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 5, 100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 5" loading="lazy">
+                alt="Rozgrywki geometryczne 5" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 5</h3>
@@ -286,11 +431,12 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 6,100x100,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 6" loading="lazy">
+                alt="Rozgrywki geometryczne 6" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 6</h3>
-                  <p>Praca zamykająca serię. Te obrazy mają za zadanie oddziaływać na Twój wzrok i skłonić Cię do zabawy formą.</p>
+                  <p>Praca zamykająca serię. Te obrazy mają za zadanie oddziaływać na Twój wzrok i skłonić Cię do zabawy
+                    formą.</p>
                   <span class="gallery-meta">100×100 cm • Akryl na desce • 2013</span>
                 </div>
               </div>
@@ -301,7 +447,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 1 a,40x40, akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 1 a" loading="lazy">
+                alt="Rozgrywki geometryczne 1 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 1 a</h3>
@@ -315,7 +461,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 2 a,40x40,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 2 a" loading="lazy">
+                alt="Rozgrywki geometryczne 2 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 2 a</h3>
@@ -329,7 +475,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 3 a,40x40,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 3 a" loading="lazy">
+                alt="Rozgrywki geometryczne 3 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 3 a</h3>
@@ -343,7 +489,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 4 a,40x40,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 4 a" loading="lazy">
+                alt="Rozgrywki geometryczne 4 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 4 a</h3>
@@ -357,7 +503,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 5 a,40x40,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 5 a" loading="lazy">
+                alt="Rozgrywki geometryczne 5 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 5 a</h3>
@@ -371,7 +517,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne 6 a,40x40,akryl na desce,2013.jpg"
-                   alt="Rozgrywki geometryczne 6 a" loading="lazy">
+                alt="Rozgrywki geometryczne 6 a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne 6 a</h3>
@@ -386,7 +532,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne a,100x100,akryl na desce,2013.JPG"
-                   alt="Rozgrywki geometryczne a" loading="lazy">
+                alt="Rozgrywki geometryczne a" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne a</h3>
@@ -400,7 +546,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne b,100x100,akryl na desce,2013.JPG"
-                   alt="Rozgrywki geometryczne b" loading="lazy">
+                alt="Rozgrywki geometryczne b" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne b</h3>
@@ -414,7 +560,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne c,100x100, akryl na desce,2013.JPG"
-                   alt="Rozgrywki geometryczne c" loading="lazy">
+                alt="Rozgrywki geometryczne c" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne c</h3>
@@ -428,7 +574,7 @@
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
               <img src="img/rozgrywki_geometryczne/Rozgrywki geometryczne d,100x100,akryl na desce,2013.JPG"
-                   alt="Rozgrywki geometryczne d" loading="lazy">
+                alt="Rozgrywki geometryczne d" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Rozgrywki geometryczne d</h3>
@@ -442,8 +588,7 @@
           <!-- Zdjęcia z wystawy -->
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/rozgrywki_geometryczne/wystawa prac.jpg"
-                   alt="Wystawa prac - widok 1" loading="lazy">
+              <img src="img/rozgrywki_geometryczne/wystawa prac.jpg" alt="Wystawa prac - widok 1" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Wystawa prac</h3>
@@ -456,8 +601,7 @@
 
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/rozgrywki_geometryczne/wystawa prac2.jpg"
-                   alt="Wystawa prac - widok 2" loading="lazy">
+              <img src="img/rozgrywki_geometryczne/wystawa prac2.jpg" alt="Wystawa prac - widok 2" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Wystawa prac 2</h3>
@@ -470,8 +614,7 @@
 
           <div class="gallery-item geometric" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/rozgrywki_geometryczne/wystawa prac 3.jpg"
-                   alt="Wystawa prac - widok 3" loading="lazy">
+              <img src="img/rozgrywki_geometryczne/wystawa prac 3.jpg" alt="Wystawa prac - widok 3" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Wystawa prac 3</h3>
@@ -485,8 +628,7 @@
           <!-- ====== PORTRETY - WSZYSTKIE 16 PLIKÓW ====== -->
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Bez tytułu, 40x50, suchy pastel, 2019.jpeg"
-                   alt="Bez tytułu" loading="lazy">
+              <img src="img/portrety/Bez tytułu, 40x50, suchy pastel, 2019.jpeg" alt="Bez tytułu" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Bez tytułu</h3>
@@ -499,8 +641,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Bez tytułu, A4, suchy pastel, 2020.jpeg"
-                   alt="Bez tytułu A4" loading="lazy">
+              <img src="img/portrety/Bez tytułu, A4, suchy pastel, 2020.jpeg" alt="Bez tytułu A4" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Bez tytułu</h3>
@@ -513,8 +654,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret , A3, suchy pastel, 2019.jpeg"
-                   alt="Portret A3" loading="lazy">
+              <img src="img/portrety/Portret , A3, suchy pastel, 2019.jpeg" alt="Portret A3" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -527,8 +667,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret , A3, suchy pastel, 2019b.jpeg"
-                   alt="Portret A3 (2)" loading="lazy">
+              <img src="img/portrety/Portret , A3, suchy pastel, 2019b.jpeg" alt="Portret A3 (2)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -541,8 +680,8 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret pana, suchy pastel ołówek, papier, 2025.jpeg"
-                   alt="Portret pana" loading="lazy">
+              <img src="img/portrety/Portret pana, suchy pastel ołówek, papier, 2025.jpeg" alt="Portret pana"
+                loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret pana</h3>
@@ -555,8 +694,8 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret pani, suchy pastel ołówek, papier, 2025.jpeg"
-                   alt="Portret pani" loading="lazy">
+              <img src="img/portrety/Portret pani, suchy pastel ołówek, papier, 2025.jpeg" alt="Portret pani"
+                loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret pani</h3>
@@ -569,8 +708,8 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret podwójny, A3, suchy pastel, 2020.jpg"
-                   alt="Portret podwójny" loading="lazy">
+              <img src="img/portrety/Portret podwójny, A3, suchy pastel, 2020.jpg" alt="Portret podwójny"
+                loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret podwójny</h3>
@@ -583,8 +722,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret podwójny.jpg"
-                   alt="Portret podwójny (wariant)" loading="lazy">
+              <img src="img/portrety/Portret podwójny.jpg" alt="Portret podwójny (wariant)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret podwójny</h3>
@@ -597,8 +735,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, pastel suchy, 2022      2.jpg"
-                   alt="Portret 2022" loading="lazy">
+              <img src="img/portrety/Portret, A3, pastel suchy, 2022      2.jpg" alt="Portret 2022" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -611,8 +748,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, pastel suchy, 2022.jpg"
-                   alt="Portret 2022 (2)" loading="lazy">
+              <img src="img/portrety/Portret, A3, pastel suchy, 2022.jpg" alt="Portret 2022 (2)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -625,8 +761,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, suchy pastel, 2020    2.jpeg"
-                   alt="Portret 2020" loading="lazy">
+              <img src="img/portrety/Portret, A3, suchy pastel, 2020    2.jpeg" alt="Portret 2020" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -639,8 +774,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, suchy pastel, 2020.jpeg"
-                   alt="Portret 2020 (2)" loading="lazy">
+              <img src="img/portrety/Portret, A3, suchy pastel, 2020.jpeg" alt="Portret 2020 (2)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -653,8 +787,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, suchy pastel, 2022      4.jpg"
-                   alt="Portret 2022 (3)" loading="lazy">
+              <img src="img/portrety/Portret, A3, suchy pastel, 2022      4.jpg" alt="Portret 2022 (3)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -667,8 +800,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret, A3, suchy pastel, 2022    5.jpg"
-                   alt="Portret 2022 (4)" loading="lazy">
+              <img src="img/portrety/Portret, A3, suchy pastel, 2022    5.jpg" alt="Portret 2022 (4)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -681,8 +813,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret.jpeg"
-                   alt="Portret" loading="lazy">
+              <img src="img/portrety/Portret.jpeg" alt="Portret" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -695,8 +826,7 @@
 
           <div class="gallery-item portraits" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/portrety/Portret2.jpeg"
-                   alt="Portret (2)" loading="lazy">
+              <img src="img/portrety/Portret2.jpeg" alt="Portret (2)" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Portret</h3>
@@ -722,17 +852,23 @@
               Malarka, mieszkanka Kielc, tworząca nowe światy z prostych, geometrycznych znaków.
             </p>
             <p>
-              Urodziłam się w Szczytnie, a edukację artystyczną zdobywałam w Olsztynie i Kielcach. 
-              Inspiruje mnie otaczający świat, który – przefiltrowany przez moją wyobraźnię – odradza się na nowo na płótnie.
+              Urodziłam się w Szczytnie, a edukację artystyczną zdobywałam w Olsztynie i Kielcach.
+              Inspiruje mnie otaczający świat, który – przefiltrowany przez moją wyobraźnię – odradza się na nowo na
+              płótnie.
             </p>
             <p>
-              W moich pracach geometria nie jest celem samym w sobie, lecz alfabetem. Abstrakcja geometryczna to dla mnie język wizualny, który pozwala mi uwolnić wyobraźnię i badać przestrzeń w sposób wykraczający poza zwykłe odwzorowanie rzeczywistości.
+              W moich pracach geometria nie jest celem samym w sobie, lecz alfabetem. Abstrakcja geometryczna to dla
+              mnie język wizualny, który pozwala mi uwolnić wyobraźnię i badać przestrzeń w sposób wykraczający poza
+              zwykłe odwzorowanie rzeczywistości.
             </p>
-            
-            <div class="about-portrait-note" style="background: rgba(0,0,0,0.03); padding: 1.5rem; border-left: 3px solid var(--accent); margin-top: 2rem; border-radius: 0 10px 10px 0;">
+
+            <div class="about-portrait-note"
+              style="background: rgba(0,0,0,0.03); padding: 1.5rem; border-left: 3px solid var(--accent); margin-top: 2rem; border-radius: 0 10px 10px 0;">
               <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Sztuka portretu</h4>
               <p style="margin-bottom: 0; font-size: 0.95rem;">
-                Portretowanie ze zdjęć – zwłaszcza starych i zniszczonych – traktuję jako misję. To artystyczne przekształcenie fotografii w ręcznie malowany obraz. Staram się przywrócić wyrazistość minionych chwil i zachować cenne wspomnienia rodzinne, nadając im nowy, trwały wymiar artystyczny.
+                Portretowanie ze zdjęć – zwłaszcza starych i zniszczonych – traktuję jako misję. To artystyczne
+                przekształcenie fotografii w ręcznie malowany obraz. Staram się przywrócić wyrazistość minionych chwil i
+                zachować cenne wspomnienia rodzinne, nadając im nowy, trwały wymiar artystyczny.
               </p>
             </div>
 
@@ -817,7 +953,8 @@
           <span class="section-tag light">Kontakt</span>
           <h2>Rozpocznijmy współpracę</h2>
           <p class="contact-text">
-            Jesteś zainteresowany zakupem obrazu, unikalnym portretem na zamówienie lub organizacją wystawy? Napisz do mnie.
+            Jesteś zainteresowany zakupem obrazu, unikalnym portretem na zamówienie lub organizacją wystawy? Napisz do
+            mnie.
           </p>
           <div class="contact-methods">
             <a href="mailto:kontakt@ziruart.com" class="contact-btn">
@@ -840,9 +977,9 @@
         </div>
         <div class="footer-right">
           <p>&copy; 2025 Karolina Zimny-Rudny. Wszystkie prawa zastrzeżone.</p>
-	 </div>
-    </div>
-<div style="font-size: 0.75rem; color: #666; margin-top: 1rem;">
+        </div>
+      </div>
+      <div style="font-size: 0.75rem; color: #666; margin-top: 1rem;">
         <a href="https://titkin.dev" style="color: #666; text-decoration: none; ">titkin.dev</a>
       </div>
   </footer>
@@ -856,4 +993,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

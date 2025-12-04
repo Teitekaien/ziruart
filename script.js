@@ -284,3 +284,25 @@ if (window.performance) {
 console.log('✅ Portfolio scripts initialized');
 console.log('📱 Gallery items:', galleryItems.length);
 console.log('🎯 Filter buttons:', filterBtns.length);
+
+// ================================
+// PRODUCT IMAGE SWITCHER
+// ================================
+
+function changeImage(thumb, src) {
+    // Find the main image in the same product card
+    const card = thumb.closest('.product-card');
+    const mainImg = card.querySelector('.product-image-main img');
+    
+    // Update source
+    mainImg.style.opacity = '0';
+    setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1';
+    }, 200);
+
+    // Update active class
+    const thumbs = card.querySelectorAll('.thumb');
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+}
