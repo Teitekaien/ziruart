@@ -129,8 +129,9 @@
               </div>
               <div class="product-thumbnails">
                 <!-- Placeholders for mockups -->
-                <div class="thumb active"><img
-                    src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg" alt="">
+                <div class="thumb active"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg')">
+                  <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.jpeg" alt="">
                 </div>
                 <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_bear.png')"><img
                     src="img/mockups/mockup_bear.png" alt="Wizualizacja"></div>
@@ -145,12 +146,15 @@
                 Idealny do przestronnego salonu lub gabinetu. Dominujące brązy i szarości
                 wprowadzają harmonię, a ostre podziały dodają charakteru.
               </p>
-              <div class="product-price">
-                <span class="price-label">Cena:</span>
-                <span class="price-value">Zapytaj o cenę</span>
-              </div>
               <div class="product-actions">
-                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+                <button class="btn btn-primary btn-block ask-price-btn" onclick="showContactInfo(this)">Zapytaj o
+                  cenę</button>
+                <div class="contact-info-msg"
+                  style="display: none; margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--text-color);">
+                  Dziękuję za zainteresowanie.<br>Proszę o kontakt mailowy:<br>
+                  <a href="mailto:karolina.ziru@gmail.com"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none;">karolina.ziru@gmail.com</a>
+                </div>
               </div>
             </div>
           </article>
@@ -183,12 +187,15 @@
                 dzięki mistrzowskiemu operowaniu kontrastem. Ożywi każde nowoczesne wnętrze,
                 stając się jego głównym punktem.
               </p>
-              <div class="product-price">
-                <span class="price-label">Cena:</span>
-                <span class="price-value">Zapytaj o cenę</span>
-              </div>
               <div class="product-actions">
-                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+                <button class="btn btn-primary btn-block ask-price-btn" onclick="showContactInfo(this)">Zapytaj o
+                  cenę</button>
+                <div class="contact-info-msg"
+                  style="display: none; margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--text-color);">
+                  Dziękuję za zainteresowanie.<br>Proszę o kontakt mailowy:<br>
+                  <a href="mailto:karolina.ziru@gmail.com"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none;">karolina.ziru@gmail.com</a>
+                </div>
               </div>
             </div>
           </article>
@@ -221,12 +228,15 @@
                 Obraz, który intryguje i z każdym spojrzeniem pozwala odkryć coś nowego.
                 Doskonały wybór dla kolekcjonerów szukających nieoczywistych rozwiązań.
               </p>
-              <div class="product-price">
-                <span class="price-label">Cena:</span>
-                <span class="price-value">Zapytaj o cenę</span>
-              </div>
               <div class="product-actions">
-                <a href="#contact" class="btn btn-primary btn-block">Jestem zainteresowany/a</a>
+                <button class="btn btn-primary btn-block ask-price-btn" onclick="showContactInfo(this)">Zapytaj o
+                  cenę</button>
+                <div class="contact-info-msg"
+                  style="display: none; margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--text-color);">
+                  Dziękuję za zainteresowanie.<br>Proszę o kontakt mailowy:<br>
+                  <a href="mailto:karolina.ziru@gmail.com"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none;">karolina.ziru@gmail.com</a>
+                </div>
               </div>
             </div>
           </article>
@@ -957,7 +967,7 @@
             mnie.
           </p>
           <div class="contact-methods">
-            <a href="mailto:kontakt@ziruart.com" class="contact-btn">
+            <a href="mailto:karolina.ziru@gmail.com" class="contact-btn">
               <span class="contact-icon">✉</span>
               <span class="contact-label">karolina.ziru@gmail.com</span>
             </a>

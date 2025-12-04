@@ -170,6 +170,14 @@ if (lightboxClose) {
     lightboxClose.addEventListener('click', closeLightbox);
 }
 
+// Close lightbox on image click
+if (lightboxImg) {
+    lightboxImg.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent bubbling to lightbox container
+        closeLightbox();
+    });
+}
+
 // Close lightbox on background click
 if (lightbox) {
     lightbox.addEventListener('click', (e) => {
@@ -255,7 +263,7 @@ function debounce(func, wait = 100) {
 // Throttle function for scroll events
 function throttle(func, limit = 100) {
     let inThrottle;
-    return function(...args) {
+    return function (...args) {
         if (!inThrottle) {
             func.apply(this, args);
             inThrottle = true;
@@ -271,8 +279,8 @@ function throttle(func, limit = 100) {
 // Log page load time (dev only)
 if (window.performance) {
     window.addEventListener('load', () => {
-        const loadTime = window.performance.timing.domContentLoadedEventEnd - 
-                        window.performance.timing.navigationStart;
+        const loadTime = window.performance.timing.domContentLoadedEventEnd -
+            window.performance.timing.navigationStart;
         console.log('🎨 Portfolio loaded in: ' + loadTime + 'ms');
     });
 }
@@ -293,7 +301,7 @@ function changeImage(thumb, src) {
     // Find the main image in the same product card
     const card = thumb.closest('.product-card');
     const mainImg = card.querySelector('.product-image-main img');
-    
+
     // Update source
     mainImg.style.opacity = '0';
     setTimeout(() => {
@@ -305,4 +313,19 @@ function changeImage(thumb, src) {
     const thumbs = card.querySelectorAll('.thumb');
     thumbs.forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
+}
+
+function showContactInfo(btn) {
+    const container = btn.parentElement;
+    const msg = container.querySelector('.contact-info-msg');
+
+    btn.style.display = 'none';
+    msg.style.display = 'block';
+
+    // Optional: animate fade in
+    msg.style.opacity = 0;
+    msg.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+        msg.style.opacity = 1;
+    }, 10);
 }
