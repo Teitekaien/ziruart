@@ -25,6 +25,9 @@
   <!-- Fonty i style -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload fontów dla szybszego First Contentful Paint -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap">
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
     rel="stylesheet">
@@ -986,11 +989,11 @@
           <p>Abstrakcja geometryczna • Op-Art • Geometryczne zwierzęta • Portrety</p>
         </div>
         <div class="footer-right">
-          <p>&copy; 2025 Karolina Zimny-Rudny. Wszystkie prawa zastrzeżone.</p>
+          <p>
+            <a href="https://titkin.dev" target="_blank" rel="noopener"
+              style="color: #888888; text-decoration: none; padding: 10px; margin: -10px;">made with ✨ by titkin.dev</a>
+          </p>
         </div>
-      </div>
-      <div style="font-size: 0.75rem; color: #666; margin-top: 1rem;">
-        <a href="https://titkin.dev" style="color: #666; text-decoration: none; ">titkin.dev</a>
       </div>
   </footer>
 
@@ -1001,7 +1004,8 @@
     <div class="lightbox-info" id="lightbox-info"></div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- defer: JavaScript nie blokuje renderowania strony -->
+  <script src="script.js" defer></script>
 </body>
 
 </html>
