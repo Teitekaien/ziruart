@@ -335,6 +335,8 @@ function changeImage(thumb, src) {
     mainImg.style.opacity = '0';
     setTimeout(() => {
         mainImg.src = src;
+        // Remove srcset to ensure the new src is used
+        mainImg.removeAttribute('srcset');
         mainImg.style.opacity = '1';
     }, 200);
 
@@ -434,6 +436,7 @@ document.querySelectorAll('.product-card').forEach(card => {
             mainImg.style.opacity = '0';
             setTimeout(() => {
                 mainImg.src = imageSources[index];
+                mainImg.removeAttribute('srcset');
                 mainImg.style.opacity = '1';
             }, 150);
         }
