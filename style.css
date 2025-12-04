@@ -1392,7 +1392,6 @@ main {
 
 /* Product Image Swipe Transition */
 .product-image-main {
-    touch-action: pan-x;
     overflow: hidden;
 }
 
@@ -1509,7 +1508,6 @@ main {
 
     .lightbox-image {
         max-height: 60vh;
-        touch-action: pan-x;
     }
 }
 
