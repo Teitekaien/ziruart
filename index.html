@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#764ba2">
   <link rel="manifest" href="manifest.json">
-  
+
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -30,16 +30,357 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.ziruart.com">
 
-  <!-- Fonty i style -->
+  <!-- Fonty - preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload fontów dla szybszego First Contentful Paint -->
+
+  <!-- Preload głównego arkusza stylów -->
+  <link rel="preload" href="style.css" as="style">
+
+  <!-- Krytyczny CSS inline (above-the-fold) -->
+  <style>
+    :root {
+      --primary: #000;
+      --secondary: #fff;
+      --accent: #FF6B35;
+      --text: #1a1a1a;
+      --bg: #ffffff;
+      --bg-alt: #f8f8f8;
+      --transition: 0.3s ease
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-size: 16px
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.2
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto
+    }
+
+    main {
+      background: var(--bg)
+    }
+
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s, visibility 0.4s
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden
+    }
+
+    .loader-geometric {
+      width: 50px;
+      height: 50px;
+      border: 3px solid transparent;
+      border-top-color: var(--secondary);
+      border-right-color: var(--secondary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+    }
+
+    .nav-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem
+    }
+
+    .logo-dot {
+      color: var(--accent);
+      font-size: 1.4rem
+    }
+
+    .logo-surname {
+      display: none;
+      font-weight: 400
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition)
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 2rem 2rem;
+      gap: 1.5rem;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      list-style: none
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      white-space: nowrap
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 1.5rem 3rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      width: 100%
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px)
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      display: flex;
+      flex-direction: column
+    }
+
+    .hero-line {
+      display: block;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards
+    }
+
+    .hero-line:nth-child(1) {
+      animation-delay: 0.2s
+    }
+
+    .hero-line:nth-child(2) {
+      animation-delay: 0.4s
+    }
+
+    .hero-line:nth-child(3) {
+      animation-delay: 0.6s
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2.5rem;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      width: 100%
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-align: center;
+      width: 100%
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--primary)
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: #fff
+    }
+
+    @media(min-width:480px) {
+      .logo-surname {
+        display: inline
+      }
+    }
+
+    @media(min-width:768px) {
+      .nav-toggle {
+        display: none
+      }
+
+      .nav-menu {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+        height: auto;
+        padding: 0;
+        box-shadow: none;
+        gap: 2rem
+      }
+
+      .hero-title {
+        font-size: 4rem
+      }
+
+      .hero-cta {
+        flex-direction: row;
+        width: auto
+      }
+
+      .btn {
+        width: auto
+      }
+    }
+  </style>
+
+  <!-- Asynchroniczne ładowanie fontów -->
   <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap">
-  <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <!-- Główny arkusz stylów - ładowany asynchronicznie -->
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="style.css">
+  </noscript>
 
   <!-- SEO: Dane strukturalne (Schema.org) -->
   <script type="application/ld+json">
@@ -134,19 +475,20 @@
           <article class="product-card" data-aos="fade-up">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.webp"
-                  alt="Niedźwiedź 1 - Obraz geometryczny">
+                <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp"
+                  srcset="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp 400w,
+                          img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 400px" alt="Niedźwiedź 1 - Obraz geometryczny">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <!-- Placeholders for mockups -->
                 <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.webp" alt="">
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp"
+                    alt="">
                 </div>
                 <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_bear.webp')"><img
-                    src="img/mockups/mockup_bear_thumb.webp" alt="Wizualizacja"></div>
-
+                    src="img/mockups/mockup_bear_thumb_60.webp" alt="Wizualizacja"></div>
               </div>
             </div>
             <div class="product-info">
@@ -174,19 +516,18 @@
           <article class="product-card" data-aos="fade-up" data-aos-delay="100">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.webp"
-                  alt="Lis 2 - Obraz geometryczny">
+                <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp 400w,
+                          img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 400px" alt="Lis 2 - Obraz geometryczny">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <!-- Placeholders for mockups -->
                 <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.webp" alt="">
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp" alt="">
                 </div>
                 <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_fox.webp')"><img
-                    src="img/mockups/mockup_fox_thumb.webp" alt="Wizualizacja"></div>
-
+                    src="img/mockups/mockup_fox_thumb_60.webp" alt="Wizualizacja"></div>
               </div>
             </div>
 
@@ -215,19 +556,18 @@
           <article class="product-card" data-aos="fade-up" data-aos-delay="200">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.webp"
-                  alt="Żyrafa 3 - Obraz geometryczny">
+                <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp 400w,
+                          img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 400px" alt="Żyrafa 3 - Obraz geometryczny">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <!-- Placeholders for mockups -->
                 <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.webp" alt="">
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp" alt="">
                 </div>
                 <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_giraffe.webp')"><img
-                    src="img/mockups/mockup_giraffe_thumb.webp" alt="Wizualizacja"></div>
-
+                    src="img/mockups/mockup_giraffe_thumb_60.webp" alt="Wizualizacja"></div>
               </div>
             </div>
 
@@ -259,8 +599,9 @@
     <!-- Featured -->
     <section class="featured">
       <div class="featured-image-container">
-        <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.webp" alt="Niedźwiedź 1"
-          class="featured-image" loading="lazy">
+        <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp" srcset="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp 400w,
+                  img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_800w.webp 800w"
+          sizes="(max-width: 768px) 100vw, 50vw" alt="Niedźwiedź 1" class="featured-image" loading="lazy">
       </div>
       <div class="featured-content">
         <div class="featured-tag">Wyróżniona seria</div>
@@ -334,8 +675,9 @@
           <!-- ====== GEOMETRYCZNE ZWIERZĘTA ====== -->
           <div class="gallery-item animals" data-aos="zoom-in" id="geometric-animals">
             <div class="gallery-image-wrapper">
-              <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024.webp"
-                alt="Niedźwiedź 1" loading="lazy">
+              <img src="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp" srcset="img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_400w.webp 400w,
+                        img/zwierzeta_gemoetryczne/Niedźwiedź 1, 100 cm x 100 cm,płótno, akryl, 2024_800w.webp 800w"
+                sizes="(max-width: 768px) 100vw, 350px" alt="Niedźwiedź 1" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Niedźwiedź 1</h3>
@@ -349,8 +691,9 @@
 
           <div class="gallery-item animals" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025.webp" alt="Lis 2"
-                loading="lazy">
+              <img src="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_400w.webp 400w,
+                        img/zwierzeta_gemoetryczne/Lis 2, 100 cm x 100 cm,płótno, akryl, 2025_800w.webp 800w"
+                sizes="(max-width: 768px) 100vw, 350px" alt="Lis 2" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Lis 2</h3>
@@ -364,8 +707,9 @@
 
           <div class="gallery-item animals" data-aos="zoom-in">
             <div class="gallery-image-wrapper">
-              <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025.webp" alt="Żyrafa 3"
-                loading="lazy">
+              <img src="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_400w.webp 400w,
+                        img/zwierzeta_gemoetryczne/Żyrafa 3, 100 cm x 100 cm, płótno, akryl, 2025_800w.webp 800w"
+                sizes="(max-width: 768px) 100vw, 350px" alt="Żyrafa 3" loading="lazy">
               <div class="gallery-overlay">
                 <div class="gallery-info">
                   <h3>Żyrafa 3</h3>
