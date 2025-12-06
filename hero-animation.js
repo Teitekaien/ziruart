@@ -14,12 +14,12 @@ if (canvas) {
         triangleSize: 120,    // Base size of triangles
         speed: 0.0003,        // Animation speed
         colorPalette: [
-            '#FF6B35', // Accent Orange
-            '#FF8C61', // Light Orange
-            '#FFD1B3', // Pale Orange
-            '#B3B3B3', // Light Grey
-            '#E0E0E0', // Very Light Grey
-            '#ffffff'  // White highlight
+            '#22C55E', // Accent Green
+            '#16A34A', // Forest Green
+            '#15803D', // Dark Green
+            '#166534', // Deep Forest
+            '#14532D', // Very Dark Green
+            '#0D3320'  // Almost Black Green
         ]
     };
 
