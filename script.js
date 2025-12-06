@@ -340,10 +340,17 @@ function changeImage(thumb, src) {
         mainImg.style.opacity = '1';
     }, 200);
 
-    // Update active class
+    // Update active class on thumbnails
     const thumbs = card.querySelectorAll('.thumb');
     thumbs.forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
+
+    // Update swipe dots to match
+    const thumbIndex = Array.from(thumbs).indexOf(thumb);
+    const dots = card.querySelectorAll('.swipe-dot');
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === thumbIndex);
+    });
 }
 
 function showContactInfo(btn) {
@@ -370,7 +377,21 @@ document.querySelectorAll('.product-image-main img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
         if (lightbox && lightboxImg) {
-            lightboxImg.src = img.src;
+            // Try to get full-res version
+            let fullResSrc = img.src;
+
+            // If image has data-fullres attribute, use it
+            if (img.dataset.fullres) {
+                fullResSrc = img.dataset.fullres;
+            }
+            // Otherwise, try to upgrade resolution (remove size suffix)
+            else if (fullResSrc.includes('_400w.webp')) {
+                fullResSrc = fullResSrc.replace('_400w.webp', '.webp');
+            } else if (fullResSrc.includes('_800w.webp')) {
+                fullResSrc = fullResSrc.replace('_800w.webp', '.webp');
+            }
+
+            lightboxImg.src = fullResSrc;
             lightboxImg.alt = img.alt || '';
 
             // Clear info for product images (no overlay text needed)

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#764ba2">
+  <meta name="theme-color" content="#ffffff">
   <link rel="manifest" href="manifest.json">
 
   <!-- Favicon -->
@@ -14,16 +14,16 @@
   <link rel="shortcut icon" href="img/favicon.ico">
 
   <!-- SEO: Podstawowe meta tagi -->
-  <title>Karolina Zimny-Rudny | Malarstwo, Abstrakcja geometryczna & Op-Art Kielce</title>
+  <title>Karolina Zimny-Rudny | Malarstwo Geometryczne & Op-Art Kielce</title>
   <meta name="description"
-    content="Portfolio artystki Karoliny Zimny-Rudny. Nowoczesna abstrakcja geometryczna, Op-Art, unikalne geometryczne zwierzęta oraz profesjonalne portrety na zamówienie. Pracownia w Kielcach.">
+    content="Unikalne obrazy ręcznie malowane. Abstrakcja geometryczna, pulsujący Op-Art i nowoczesne portrety na zamówienie. Kup bezpośrednio od artystki. Zobacz galerię.">
   <meta name="keywords"
-    content="Karolina Zimny-Rudny, malarstwo abstrakcyjne, Op-Art, abstrakcja geometryczna, obrazy geometryczne, portrety na zamówienie, Kielce, sztuka współczesna, geometryczne zwierzęta, malarstwo sztalugowe">
+    content="Malarstwo abstrakcyjne geometryczne, Op-Art Kielce, Karolina Zimny-Rudny, Obrazy geometryczne do salonu, Sztuka współczesna sklep, geometric animals, portrety na zamówienie">
   <meta name="author" content="Karolina Zimny-Rudny">
-  <link rel="canonical" href="https://www.ziruart.com"> <!-- Ustaw tu swój właściwy adres -->
+  <link rel="canonical" href="https://www.ziruart.com">
 
-  <!-- SEO: Open Graph (dla Facebooka, LinkedIn itp.) -->
-  <meta property="og:title" content="Karolina Zimny-Rudny | Geometria i Wyobraźnia">
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Karolina Zimny-Rudny | Geometria, Wyobraźnia, Ruch">
   <meta property="og:description"
     content="Odkryj świat, w którym matematyczna precyzja spotyka się z artystyczną wizją. Abstrakcja geometryczna, Op-Art i portrety.">
   <meta property="og:image" content="img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024.webp">
@@ -40,29 +40,41 @@
   <!-- Krytyczny CSS inline (above-the-fold) -->
   <style>
     :root {
-      --primary: #000;
-      --secondary: #fff;
+      /* Design Tokens based on UX Spec */
+      --primary: #000000;
+      --secondary: #FFFFFF;
       --accent: #FF6B35;
       --text: #1a1a1a;
-      --bg: #ffffff;
-      --bg-alt: #f8f8f8;
-      --transition: 0.3s ease
+      --bg: #FFFFFF;
+      --bg-alt: #F8F8F8;
+      --surface: #F8F8F8;
+      --error: #D32F2F;
+
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --spacing-unit: 8px;
+      --section-spacing: 6rem;
+      /* 96px */
+
+      --radius-btn: 50px;
+      --transition: 0.3s ease;
     }
 
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden
+      overflow-x: hidden;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--primary);
+      font-family: var(--font-body);
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -70,16 +82,16 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      font-size: 16px
+      font-size: 16px;
     }
 
     h1,
     h2,
     h3,
     h4 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 700;
-      line-height: 1.2
+      line-height: 1.2;
     }
 
     img {
@@ -125,6 +137,270 @@
       to {
         transform: rotate(360deg)
       }
+    }
+
+    /* === CREATIVE INTERACTIONS === */
+
+    /* 1. Custom Cursor - REMOVED */
+    /* Handled by browser default */
+
+    /* 2. Hero Big Type */
+    .hero-title {
+      font-size: clamp(3rem, 10vw, 8rem);
+      line-height: 0.9;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-line {
+      display: block;
+      position: relative;
+    }
+
+    /* Creative offset for hero lines */
+    .hero-line:nth-child(2) {
+      margin-left: 10vw;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-line:nth-child(3) {
+      margin-left: 5vw;
+    }
+
+    /* === OP-ART VISUAL UTILITIES === */
+
+    /* 1. Geometric Background Patterns */
+
+    /* Dots (classic Op-Art) - for About section */
+    .bg-pattern-dots {
+      position: relative;
+    }
+
+    .bg-pattern-dots::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Diamonds (For Sale section) */
+    .bg-pattern-diamonds {
+      position: relative;
+    }
+
+    .bg-pattern-diamonds::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(45deg, rgba(255, 107, 53, 0.03) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 107, 53, 0.03) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 107, 53, 0.03) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 107, 53, 0.03) 75%);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 0, 20px -20px, 0px 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Triangles (Works/Gallery section) */
+    .bg-pattern-triangles {
+      position: relative;
+    }
+
+    .bg-pattern-triangles::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(60deg, transparent 48%, rgba(0, 0, 0, 0.04) 50%, transparent 52%),
+        linear-gradient(-60deg, transparent 48%, rgba(0, 0, 0, 0.04) 50%, transparent 52%);
+      background-size: 30px 52px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Horizontal Lines (Philosophy section) */
+    .bg-pattern-lines {
+      position: relative;
+    }
+
+    .bg-pattern-lines::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 19px,
+          rgba(0, 0, 0, 0.03) 19px,
+          rgba(0, 0, 0, 0.03) 20px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Crosses/Grid (Contact section) */
+    .bg-pattern-crosses {
+      position: relative;
+    }
+
+    .bg-pattern-crosses::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 107, 53, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 53, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ensure content stays above patterns */
+    .bg-pattern-dots>*,
+    .bg-pattern-diamonds>*,
+    .bg-pattern-triangles>*,
+    .bg-pattern-lines>*,
+    .bg-pattern-crosses>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Solid backgrounds for content areas (no pattern bleed-through) */
+    .product-card,
+    .product-info,
+    .about-content,
+    .about-exhibitions,
+    .benefit-card,
+    .philosophy-card {
+      background-color: var(--bg);
+    }
+
+    /* === ANGULAR DESIGN SYSTEM === */
+    /* Override all rounded corners for geometric consistency */
+    .btn,
+    .filter-btn,
+    .product-card,
+    .product-image-main,
+    .product-badge,
+    .gallery-item,
+    .gallery-overlay,
+    .lightbox-image,
+    .timeline-year,
+    .section-tag,
+    .contact-btn,
+    .thumb,
+    .swipe-dot,
+    .ask-price-btn,
+    .featured-tag,
+    .about-portrait-note {
+      border-radius: 0 !important;
+    }
+
+    /* Nav "Na sprzedaż" styling - permanently highlighted */
+    .nav-link-sale {
+      color: var(--accent);
+      font-weight: 700;
+      border: 2px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+    }
+
+    /* TITKIN.DEV Badge */
+    .titkin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #1a1a1a;
+      color: #fafafa;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border: 2px solid #1a1a1a;
+      transition: all 0.2s;
+    }
+
+    .titkin-badge:hover {
+      background: #fafafa;
+      color: #1a1a1a;
+      box-shadow: 4px 4px 0 #1a1a1a;
+      transform: translate(-2px, -2px);
+    }
+
+    .titkin-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+    }
+
+    /* 2. Geometric Card Hover Effect (Offset Border) */
+    .card-geometric {
+      position: relative;
+      background: var(--bg);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+    }
+
+    .card-geometric::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--primary);
+      z-index: -1;
+      transition: transform 0.3s ease;
+      transform: translate(0, 0);
+    }
+
+    .card-geometric:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .card-geometric:hover::after {
+      transform: translate(8px, 8px);
+    }
+
+    /* Accent border variants */
+    .card-geometric.accent-border::after {
+      border-color: var(--accent);
+    }
+
+    .card-geometric.primary-border::after {
+      border-color: var(--primary);
+    }
+
+    /* 3. Section Separators (Sharp Angles) */
+    .section-separator {
+      height: 2px;
+      background: var(--text);
+      width: 100%;
+      max-width: 50px;
+      margin: 2rem auto;
+      position: relative;
+    }
+
+    .section-separator::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 8px;
+      height: 8px;
+      background: var(--bg);
+      border: 2px solid var(--text);
     }
 
     .nav {
@@ -220,7 +496,17 @@
       position: relative;
       overflow: hidden;
       padding: 6rem 1.5rem 3rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
+      background: #0a0a0a;
+      /* Fallback color matching canvas */
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
 
     .hero-content {
@@ -235,7 +521,7 @@
       display: inline-block;
       padding: 0.5rem 1.5rem;
       background: rgba(255, 255, 255, 0.2);
-      border-radius: 50px;
+      border-radius: 0;
       color: #fff;
       font-size: 0.75rem;
       font-weight: 600;
@@ -307,7 +593,7 @@
     .btn {
       display: inline-block;
       padding: 1rem 2rem;
-      border-radius: 50px;
+      border-radius: 0;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
@@ -368,7 +654,7 @@
 
   <!-- Asynchroniczne ładowanie fontów -->
   <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400&family=JetBrains+Mono:wght@700&display=swap"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link
@@ -425,7 +711,7 @@
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link">Start</a></li>
-        <li><a href="#for-sale" class="nav-link" style="color: var(--accent); font-weight: 700;">Na sprzedaż</a></li>
+        <li><a href="#for-sale" class="nav-link nav-link-sale">Na sprzedaż</a></li>
         <li><a href="#works" class="nav-link">Prace</a></li>
         <li><a href="#philosophy" class="nav-link">Filozofia</a></li>
         <li><a href="#about" class="nav-link">O mnie</a></li>
@@ -436,8 +722,8 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="hero-bg"></div>
+    <section class="hero" id="hero" style="background: #0a0a0a;">
+      <canvas id="hero-canvas" class="hero-bg"></canvas>
       <div class="hero-content">
         <div class="hero-label">Artystka Współczesna • Kielce</div>
         <h1 class="hero-title">
@@ -460,8 +746,41 @@
       </div>
     </section>
 
+    <!-- Benefits Section (New) -->
+    <section class="benefits bg-pattern-dots" id="benefits" style="padding: 4rem 1.5rem; background: var(--bg-alt);">
+      <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <!-- Separator -->
+        <div class="section-separator"></div>
+
+        <div class="benefits-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 2rem;">
+
+          <div class="benefit-card card-geometric accent-border" data-aos="fade-up" style="padding: 2rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--accent);">Jedyny egzemplarz</h3>
+            <p>Każdy obraz jest ręcznie malowanym oryginałem. Nie tworzę masowych printów. Twoje wnętrze zyska dzieło,
+              którego nie ma nikt inny.</p>
+          </div>
+
+          <div class="benefit-card card-geometric primary-border" data-aos="fade-up" data-aos-delay="100"
+            style="padding: 2rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Sztuka, która żyje</h3>
+            <p>Dzięki technikom Op-Art moje obrazy pulsują i zmieniają się w zależności od kąta patrzenia, wprowadzając
+              do pomieszczenia energię i ruch.</p>
+          </div>
+
+          <div class="benefit-card card-geometric accent-border" data-aos="fade-up" data-aos-delay="200"
+            style="padding: 2rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--accent);">Bezpośrednio z pracowni</h3>
+            <p>Kupujesz bezpośrednio ode mnie, w Kielcach. Każdy obraz sygnuję i przygotowuję do bezpiecznej wysyłki
+              (lub odbioru osobistego).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- For Sale Section -->
-    <section class="for-sale" id="for-sale">
+    <section class="for-sale bg-pattern-dots" id="for-sale">
       <div class="container">
         <div class="section-header center">
           <span class="section-tag">Dostępne od ręki</span>
@@ -475,18 +794,19 @@
           <article class="product-card" data-aos="fade-up">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_400w.webp" srcset="img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_400w.webp 400w,
-                          img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_800w.webp 800w"
-                  sizes="(max-width: 768px) 100vw, 400px" alt="Niedźwiedź 1 - Obraz geometryczny">
+                <img src="img/mockups/mockup_bear.webp" data-fullres="img/mockups/mockup_bear.png"
+                  alt="Niedźwiedź 1 - Wizualizacja we wnętrzu">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_400w.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_60w.webp" alt="">
+                <div class="thumb active" onclick="changeImage(this, 'img/mockups/mockup_bear.webp')">
+                  <img src="img/mockups/mockup_bear_thumb_60.webp" alt="Wizualizacja">
                 </div>
-                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_bear.webp')"><img
-                    src="img/mockups/mockup_bear_thumb_60.webp" alt="Wizualizacja"></div>
+                <div class="thumb"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/niedzwiedz_1_100_cm_x_100_cm_plotno_akryl_2024_60w.webp"
+                    alt="Obraz">
+                </div>
               </div>
             </div>
             <div class="product-info">
@@ -514,18 +834,18 @@
           <article class="product-card" data-aos="fade-up" data-aos-delay="100">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_400w.webp 400w,
-                          img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_800w.webp 800w"
-                  sizes="(max-width: 768px) 100vw, 400px" alt="Lis 2 - Obraz geometryczny">
+                <img src="img/mockups/mockup_fox.webp" data-fullres="img/mockups/mockup_fox.png"
+                  alt="Lis 2 - Wizualizacja we wnętrzu">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_400w.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_60w.webp" alt="">
+                <div class="thumb active" onclick="changeImage(this, 'img/mockups/mockup_fox.webp')">
+                  <img src="img/mockups/mockup_fox_thumb_60.webp" alt="Wizualizacja">
                 </div>
-                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_fox.webp')"><img
-                    src="img/mockups/mockup_fox_thumb_60.webp" alt="Wizualizacja"></div>
+                <div class="thumb"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/lis_2_100_cm_x_100_cm_plotno_akryl_2025_60w.webp" alt="Obraz">
+                </div>
               </div>
             </div>
 
@@ -554,18 +874,18 @@
           <article class="product-card" data-aos="fade-up" data-aos-delay="200">
             <div class="product-gallery">
               <div class="product-image-main">
-                <img src="img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_400w.webp" srcset="img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_400w.webp 400w,
-                          img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_800w.webp 800w"
-                  sizes="(max-width: 768px) 100vw, 400px" alt="Żyrafa 3 - Obraz geometryczny">
+                <img src="img/mockups/mockup_giraffe.webp" data-fullres="img/mockups/mockup_giraffe.png"
+                  alt="Żyrafa 3 - Wizualizacja we wnętrzu">
                 <span class="product-badge">Dostępny</span>
               </div>
               <div class="product-thumbnails">
-                <div class="thumb active"
-                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_400w.webp')">
-                  <img src="img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_60w.webp" alt="">
+                <div class="thumb active" onclick="changeImage(this, 'img/mockups/mockup_giraffe.webp')">
+                  <img src="img/mockups/mockup_giraffe_thumb_60.webp" alt="Wizualizacja">
                 </div>
-                <div class="thumb" onclick="changeImage(this, 'img/mockups/mockup_giraffe.webp')"><img
-                    src="img/mockups/mockup_giraffe_thumb_60.webp" alt="Wizualizacja"></div>
+                <div class="thumb"
+                  onclick="changeImage(this, 'img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025.webp')">
+                  <img src="img/zwierzeta_gemoetryczne/zyrafa_3_100_cm_x_100_cm_plotno_akryl_2025_60w.webp" alt="Obraz">
+                </div>
               </div>
             </div>
 
@@ -614,14 +934,16 @@
     </section>
 
     <!-- Philosophy -->
-    <section class="philosophy" id="philosophy">
+    <section class="philosophy bg-pattern-dots" id="philosophy">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header center">
           <span class="section-tag">Filozofia</span>
           <h2 class="section-title">Mój język geometrii</h2>
+          <div class="section-separator"></div>
         </div>
-        <div class="philosophy-grid">
-          <div class="philosophy-card" data-aos="fade-up">
+        <div class="philosophy-grid" style="text-align: center;">
+          <div class="philosophy-card" data-aos="fade-up"
+            style="display: flex; flex-direction: column; align-items: center;">
             <div class="philosophy-icon">◢</div>
             <h3>Dialog precyzji i swobody</h3>
             <p>
@@ -630,7 +952,8 @@
               opowiadam o harmonii.
             </p>
           </div>
-          <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100"
+            style="display: flex; flex-direction: column; align-items: center;">
             <div class="philosophy-icon">◣</div>
             <h3>Przestrzeń poza dosłownością</h3>
             <p>
@@ -639,7 +962,8 @@
               własną historię.
             </p>
           </div>
-          <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200"
+            style="display: flex; flex-direction: column; align-items: center;">
             <div class="philosophy-icon">◥</div>
             <h3>Pulsacja Op-Art</h3>
             <p>
@@ -652,7 +976,7 @@
     </section>
 
     <!-- Works -->
-    <section class="works" id="works">
+    <section class="works bg-pattern-dots" id="works">
       <div class="container-fluid">
         <div class="section-header center">
           <span class="section-tag">Portfolio</span>
@@ -1204,7 +1528,7 @@
     </section>
 
     <!-- About -->
-    <section class="about" id="about">
+    <section class="about bg-pattern-dots" id="about">
       <div class="container">
         <div class="about-grid">
           <div class="about-content" data-aos="fade-right">
@@ -1305,28 +1629,26 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-      <div class="container-narrow">
-        <div class="contact-content" data-aos="fade-up">
-          <span class="section-tag light">Kontakt</span>
-          <h2>Rozpocznijmy współpracę</h2>
-          <p class="contact-text">
-            Jesteś zainteresowany zakupem obrazu, unikalnym portretem na zamówienie lub organizacją wystawy? Napisz do
-            mnie.
-          </p>
-          <div class="contact-methods">
-            <a href="mailto:karolina.ziru@gmail.com" class="contact-btn">
-              <span class="contact-icon">✉</span>
-              <span class="contact-label">karolina.ziru@gmail.com</span>
-            </a>
+        <!-- Contact -->
+        <section class="contact bg-pattern-dots" id="contact">
+          <div class="container-narrow">
+            <div class="contact-content" data-aos="fade-up">
+              <span class="section-tag light">Kontakt</span>
+              <h2>Rozpocznijmy współpracę</h2>
+              <p class="contact-text">
+                Jesteś zainteresowany zakupem obrazu, unikalnym portretem na zamówienie lub organizacją wystawy? Napisz
+                do
+                mnie.
+              </p>
+              <div class="contact-methods">
+                <a href="mailto:karolina.ziru@gmail.com" class="contact-btn">
+                  <span class="contact-icon">✉</span>
+                  <span class="contact-label">karolina.ziru@gmail.com</span>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
   </main>
 
   <!-- Footer -->
@@ -1338,10 +1660,12 @@
           <p>Abstrakcja geometryczna • Op-Art • Geometryczne zwierzęta • Portrety</p>
         </div>
         <div class="footer-right">
-          <p>
-            <a href="https://titkin.dev" target="_blank" rel="noopener"
-              style="color: #888888; text-decoration: none; padding: 10px; margin: -10px;">made with ✨ by titkin.dev</a>
-          </p>
+          <div style="text-align: center; padding: 0;">
+            <a href="https://titkin.dev" target="_blank" rel="noopener" class="titkin-badge">
+              <span class="titkin-badge-dot"></span>
+              Built by TITKIN.DEV
+            </a>
+          </div>
         </div>
       </div>
   </footer>
@@ -1353,8 +1677,11 @@
     <div class="lightbox-info" id="lightbox-info"></div>
   </div>
 
-  <!-- defer: JavaScript nie blokuje renderowania strony -->
+  <!-- script.js -->
   <script src="script.js" defer></script>
+  <script src="hero-animation.js" defer></script>
+
+  <!-- Custom Cursor & Creative Script - REMOVED -->
 </body>
 
 </html>
